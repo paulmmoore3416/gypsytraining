@@ -15,3 +15,24 @@ Thumbs.db
 
 # Local Storage Backups
 data/*.json
+
+# Node Dependencies
+node_modules/
+backend/node_modules/
+android-app/node_modules/
+
+# Environment
+backend/.env
+
+# Database
+backend/data/
+
+# Build Outputs
+android-app/.expo/
+android-app/dist/
+*.apk
+*.aab
+
+# Logs
+*.log
+npm-debug.log*

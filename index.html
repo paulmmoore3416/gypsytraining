@@ -21,9 +21,12 @@
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about-breed" class="nav-link">Breed Info</a></li>
+                    <li><a href="#medical" class="nav-link">Medical Hub</a></li>
                     <li><a href="#training" class="nav-link">Training Suite</a></li>
+                    <li><a href="#behavior" class="nav-link">Behavior Analysis</a></li>
                     <li><a href="#journal" class="nav-link">Journal</a></li>
                     <li><a href="#photos" class="nav-link">Photo Albums</a></li>
+                    <li><a href="#certification" class="nav-link">Certification</a></li>
                     <li><a href="#resources" class="nav-link">Resources</a></li>
                     <li><a href="#commands" class="nav-link">Commands</a></li>
                     <li><a href="#nutrition" class="nav-link">Nutrition</a></li>
@@ -164,6 +167,367 @@
                                 <p>Full mental maturity. Service certification ready. Consistent performance expected. Maintenance training begins.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Hub Section -->
+        <section id="medical" class="content-section medical-section">
+            <div class="container">
+                <h2 class="section-title">Medical & Health Hub</h2>
+                <p class="section-subtitle">Comprehensive health tracking for optimal service animal performance</p>
+
+                <!-- Health Dashboard -->
+                <div class="health-dashboard">
+                    <div class="dashboard-cards">
+                        <div class="health-card">
+                            <div class="card-icon">💉</div>
+                            <h3>Next Vet Visit</h3>
+                            <p class="card-value" id="next-vet-date">Not Scheduled</p>
+                            <button class="btn-sm" id="schedule-vet">Schedule</button>
+                        </div>
+                        <div class="health-card">
+                            <div class="card-icon">💊</div>
+                            <h3>Medications Active</h3>
+                            <p class="card-value" id="active-meds">0</p>
+                            <button class="btn-sm" id="add-medication">Add Medication</button>
+                        </div>
+                        <div class="health-card">
+                            <div class="card-icon">📊</div>
+                            <h3>Health Score</h3>
+                            <p class="card-value" id="health-score">--</p>
+                            <button class="btn-sm" id="log-health">Update</button>
+                        </div>
+                        <div class="health-card">
+                            <div class="card-icon">🔔</div>
+                            <h3>Upcoming Tasks</h3>
+                            <p class="card-value" id="upcoming-tasks">0</p>
+                            <button class="btn-sm" id="view-tasks">View All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Records Tracker -->
+                <div class="medical-tracker">
+                    <h3>Vaccination & Medical Records</h3>
+                    <div class="records-grid">
+                        <div class="record-card">
+                            <h4>Core Vaccinations</h4>
+                            <div class="vaccine-list" id="core-vaccines">
+                                <div class="vaccine-item">
+                                    <input type="checkbox" id="vacc-rabies" data-vaccine="rabies">
+                                    <label for="vacc-rabies">
+                                        <strong>Rabies</strong>
+                                        <span>Due: <input type="date" class="vaccine-date" data-vaccine="rabies"></span>
+                                    </label>
+                                </div>
+                                <div class="vaccine-item">
+                                    <input type="checkbox" id="vacc-dhpp" data-vaccine="dhpp">
+                                    <label for="vacc-dhpp">
+                                        <strong>DHPP (Distemper, Hepatitis, Parvovirus, Parainfluenza)</strong>
+                                        <span>Due: <input type="date" class="vaccine-date" data-vaccine="dhpp"></span>
+                                    </label>
+                                </div>
+                                <div class="vaccine-item">
+                                    <input type="checkbox" id="vacc-bordetella" data-vaccine="bordetella">
+                                    <label for="vacc-bordetella">
+                                        <strong>Bordetella (Kennel Cough)</strong>
+                                        <span>Due: <input type="date" class="vaccine-date" data-vaccine="bordetella"></span>
+                                    </label>
+                                </div>
+                                <div class="vaccine-item">
+                                    <input type="checkbox" id="vacc-lepto" data-vaccine="lepto">
+                                    <label for="vacc-lepto">
+                                        <strong>Leptospirosis</strong>
+                                        <span>Due: <input type="date" class="vaccine-date" data-vaccine="lepto"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="record-card">
+                            <h4>Preventative Care</h4>
+                            <div class="preventative-list">
+                                <div class="prev-item">
+                                    <strong>Heartworm Prevention:</strong>
+                                    <select id="heartworm-brand" class="prev-select">
+                                        <option value="">Select Brand</option>
+                                        <option value="heartgard">Heartgard Plus</option>
+                                        <option value="sentinel">Sentinel Spectrum</option>
+                                        <option value="simparica">Simparica Trio</option>
+                                        <option value="nexgard">NexGard Plus</option>
+                                    </select>
+                                    <span>Next Dose: <input type="date" id="heartworm-next" class="prev-date"></span>
+                                </div>
+                                <div class="prev-item">
+                                    <strong>Flea/Tick Prevention:</strong>
+                                    <select id="flea-brand" class="prev-select">
+                                        <option value="">Select Brand</option>
+                                        <option value="frontline">Frontline Plus</option>
+                                        <option value="advantix">K9 Advantix II</option>
+                                        <option value="bravecto">Bravecto</option>
+                                        <option value="seresto">Seresto Collar</option>
+                                    </select>
+                                    <span>Next Dose: <input type="date" id="flea-next" class="prev-date"></span>
+                                </div>
+                                <div class="prev-item">
+                                    <strong>Deworming:</strong>
+                                    <span>Last Done: <input type="date" id="deworm-last" class="prev-date"></span>
+                                    <span>Next Due: <input type="date" id="deworm-next" class="prev-date"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="record-card">
+                            <h4>Health Screenings</h4>
+                            <div class="screening-list">
+                                <div class="screening-item">
+                                    <input type="checkbox" id="screen-hip" data-screen="hip">
+                                    <label for="screen-hip">
+                                        <strong>Hip Dysplasia Screening (OFA/PennHIP)</strong>
+                                        <span>Date: <input type="date" class="screen-date" data-screen="hip"></span>
+                                        <span>Result: <input type="text" class="screen-result" placeholder="e.g., Good, Fair, Excellent" data-screen="hip"></span>
+                                    </label>
+                                </div>
+                                <div class="screening-item">
+                                    <input type="checkbox" id="screen-thyroid" data-screen="thyroid">
+                                    <label for="screen-thyroid">
+                                        <strong>Thyroid Panel</strong>
+                                        <span>Date: <input type="date" class="screen-date" data-screen="thyroid"></span>
+                                        <span>Result: <input type="text" class="screen-result" placeholder="Normal/Abnormal" data-screen="thyroid"></span>
+                                    </label>
+                                </div>
+                                <div class="screening-item">
+                                    <input type="checkbox" id="screen-cardiac" data-screen="cardiac">
+                                    <label for="screen-cardiac">
+                                        <strong>Cardiac Exam</strong>
+                                        <span>Date: <input type="date" class="screen-date" data-screen="cardiac"></span>
+                                        <span>Result: <input type="text" class="screen-result" placeholder="Normal/Abnormal" data-screen="cardiac"></span>
+                                    </label>
+                                </div>
+                                <div class="screening-item">
+                                    <input type="checkbox" id="screen-eyes" data-screen="eyes">
+                                    <label for="screen-eyes">
+                                        <strong>Eye Exam (CERF/OFA)</strong>
+                                        <span>Date: <input type="date" class="screen-date" data-screen="eyes"></span>
+                                        <span>Result: <input type="text" class="screen-result" placeholder="Normal/Abnormal" data-screen="eyes"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medication Manager -->
+                <div class="medication-manager">
+                    <h3>Medication & Supplement Tracker</h3>
+                    <div class="medication-controls">
+                        <button id="add-new-medication" class="btn-primary">Add Medication/Supplement</button>
+                        <button id="medication-reminder" class="btn-secondary">Set Reminders</button>
+                    </div>
+                    <div class="medication-list" id="medication-list">
+                        <p class="empty-state">No medications added. Click "Add Medication/Supplement" to start tracking.</p>
+                    </div>
+                </div>
+
+                <!-- Appointment Calendar -->
+                <div class="appointment-calendar">
+                    <h3>Veterinary Appointment Calendar</h3>
+                    <div class="calendar-controls">
+                        <button id="add-appointment" class="btn-primary">Schedule Appointment</button>
+                        <button id="view-calendar" class="btn-secondary">View Full Calendar</button>
+                    </div>
+                    <div class="appointments-upcoming" id="appointments-list">
+                        <h4>Upcoming Appointments</h4>
+                        <div id="upcoming-appointments">
+                            <p class="empty-state">No upcoming appointments scheduled.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Vitals Tracker -->
+                <div class="vitals-tracker">
+                    <h3>Health Vitals Log</h3>
+                    <p class="section-info">Track Gypsy's vitals over time to establish baselines and detect issues early</p>
+
+                    <div class="vitals-input">
+                        <div class="vital-group">
+                            <label>Date:</label>
+                            <input type="date" id="vital-date" class="vital-input">
+                        </div>
+                        <div class="vital-group">
+                            <label>Weight (lbs):</label>
+                            <input type="number" id="vital-weight" class="vital-input" step="0.1" min="0">
+                        </div>
+                        <div class="vital-group">
+                            <label>Body Temp (°F):</label>
+                            <input type="number" id="vital-temp" class="vital-input" step="0.1" min="95" max="110">
+                            <span class="vital-normal">Normal: 101-102.5°F</span>
+                        </div>
+                        <div class="vital-group">
+                            <label>Heart Rate (BPM):</label>
+                            <input type="number" id="vital-hr" class="vital-input" min="0">
+                            <span class="vital-normal">Normal: 60-140 BPM</span>
+                        </div>
+                        <div class="vital-group">
+                            <label>Respiratory Rate:</label>
+                            <input type="number" id="vital-rr" class="vital-input" min="0">
+                            <span class="vital-normal">Normal: 10-30 breaths/min</span>
+                        </div>
+                        <div class="vital-group">
+                            <label>Energy Level:</label>
+                            <select id="vital-energy" class="vital-input">
+                                <option value="">Select...</option>
+                                <option value="1">Very Low</option>
+                                <option value="2">Low</option>
+                                <option value="3">Normal</option>
+                                <option value="4">High</option>
+                                <option value="5">Very High</option>
+                            </select>
+                        </div>
+                        <div class="vital-group">
+                            <label>Notes:</label>
+                            <textarea id="vital-notes" class="vital-textarea" placeholder="Any observations, symptoms, or concerns..."></textarea>
+                        </div>
+                        <button id="log-vitals" class="btn-primary">Log Vitals</button>
+                    </div>
+
+                    <div class="vitals-history">
+                        <h4>Vitals History</h4>
+                        <table class="vitals-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Weight</th>
+                                    <th>Temp</th>
+                                    <th>Heart Rate</th>
+                                    <th>Resp Rate</th>
+                                    <th>Energy</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vitals-log">
+                                <tr>
+                                    <td colspan="7" class="empty-state">No vitals logged yet. Start tracking above.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Symptom & Incident Logger -->
+                <div class="symptom-logger">
+                    <h3>Symptom & Incident Log</h3>
+                    <p class="section-info">Document any health concerns, injuries, or unusual behaviors</p>
+
+                    <div class="symptom-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date & Time:</label>
+                                <input type="datetime-local" id="symptom-datetime" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Type:</label>
+                                <select id="symptom-type" class="form-input">
+                                    <option value="">Select Type...</option>
+                                    <option value="injury">Injury</option>
+                                    <option value="illness">Illness</option>
+                                    <option value="behavior">Behavioral Change</option>
+                                    <option value="allergy">Allergic Reaction</option>
+                                    <option value="gi">GI Issue</option>
+                                    <option value="skin">Skin Issue</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Severity:</label>
+                                <select id="symptom-severity" class="form-input">
+                                    <option value="">Select...</option>
+                                    <option value="mild">Mild (Monitor)</option>
+                                    <option value="moderate">Moderate (Vet if persists)</option>
+                                    <option value="severe">Severe (Vet ASAP)</option>
+                                    <option value="emergency">Emergency (ER now)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Description:</label>
+                            <textarea id="symptom-description" class="form-textarea" rows="4" placeholder="Describe what happened, symptoms observed, timeline, etc."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Actions Taken:</label>
+                            <textarea id="symptom-actions" class="form-textarea" rows="2" placeholder="What did you do? (e.g., applied ice, called vet, gave medication)"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Outcome/Resolution:</label>
+                            <textarea id="symptom-outcome" class="form-textarea" rows="2" placeholder="How did it resolve? Follow-up needed?"></textarea>
+                        </div>
+                        <button id="log-symptom" class="btn-primary">Log Incident</button>
+                    </div>
+
+                    <div class="symptom-history">
+                        <h4>Incident History</h4>
+                        <div id="symptom-log">
+                            <p class="empty-state">No incidents logged. Hopefully it stays that way!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Expenses Tracker -->
+                <div class="expense-tracker">
+                    <h3>Medical Expenses</h3>
+                    <div class="expense-summary">
+                        <div class="expense-card">
+                            <h4>This Month</h4>
+                            <p class="expense-amount" id="expense-month">$0.00</p>
+                        </div>
+                        <div class="expense-card">
+                            <h4>This Year</h4>
+                            <p class="expense-amount" id="expense-year">$0.00</p>
+                        </div>
+                        <div class="expense-card">
+                            <h4>Lifetime</h4>
+                            <p class="expense-amount" id="expense-lifetime">$0.00</p>
+                        </div>
+                    </div>
+
+                    <div class="expense-form">
+                        <div class="form-row">
+                            <input type="date" id="expense-date" class="form-input" placeholder="Date">
+                            <select id="expense-category" class="form-input">
+                                <option value="">Category...</option>
+                                <option value="vet-visit">Vet Visit</option>
+                                <option value="medication">Medication</option>
+                                <option value="vaccination">Vaccination</option>
+                                <option value="emergency">Emergency</option>
+                                <option value="preventative">Preventative Care</option>
+                                <option value="screening">Health Screening</option>
+                                <option value="equipment">Medical Equipment</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input type="number" id="expense-amount" class="form-input" placeholder="Amount ($)" step="0.01" min="0">
+                            <input type="text" id="expense-description" class="form-input" placeholder="Description">
+                            <button id="add-expense" class="btn-primary">Add</button>
+                        </div>
+                    </div>
+
+                    <div class="expense-history">
+                        <table class="expense-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="expense-log">
+                                <tr>
+                                    <td colspan="4" class="empty-state">No expenses tracked yet.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -508,6 +872,203 @@
             </div>
         </section>
 
+        <!-- Behavior Pattern Analysis Section -->
+        <section id="behavior" class="content-section behavior-section">
+            <div class="container">
+                <h2 class="section-title">Behavior Pattern Analysis</h2>
+                <p class="section-subtitle">Track behavioral trends, identify triggers, and measure progress</p>
+
+                <!-- Behavior Dashboard -->
+                <div class="behavior-dashboard">
+                    <div class="behavior-summary">
+                        <div class="summary-card">
+                            <h4>Overall Trend</h4>
+                            <div class="trend-indicator" id="behavior-trend">
+                                <span class="trend-icon">📈</span>
+                                <span class="trend-text">Improving</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Entries This Week</h4>
+                            <p class="summary-number" id="entries-week">0</p>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Identified Triggers</h4>
+                            <p class="summary-number" id="trigger-count">0</p>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Success Rate</h4>
+                            <p class="summary-number" id="success-rate">--</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavior Logger -->
+                <div class="behavior-logger">
+                    <h3>Log Behavior Observation</h3>
+                    <form id="behavior-log-form" class="behavior-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date & Time:</label>
+                                <input type="datetime-local" id="behavior-datetime" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Environment:</label>
+                                <select id="behavior-environment" class="form-input" required>
+                                    <option value="">Select...</option>
+                                    <option value="home">Home</option>
+                                    <option value="yard">Yard/Outdoor</option>
+                                    <option value="walk">Walk/Public</option>
+                                    <option value="store">Store/Indoor Public</option>
+                                    <option value="vet">Vet/Medical</option>
+                                    <option value="training">Training Session</option>
+                                    <option value="social">Social Situation</option>
+                                    <option value="vehicle">Vehicle</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Handler State:</label>
+                                <select id="handler-state" class="form-input">
+                                    <option value="">Select...</option>
+                                    <option value="calm">Calm/Baseline</option>
+                                    <option value="stressed">Stressed</option>
+                                    <option value="anxious">Anxious</option>
+                                    <option value="triggered">Triggered/PTSD Episode</option>
+                                    <option value="tired">Fatigued</option>
+                                    <option value="good">Good Mood</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Behavior Observed:</label>
+                            <select id="behavior-type" class="form-input" required>
+                                <option value="">Select Primary Behavior...</option>
+                                <optgroup label="Positive Behaviors">
+                                    <option value="calm">Calm/Settled</option>
+                                    <option value="focused">Focused on Handler</option>
+                                    <option value="obedient">Obedient Response</option>
+                                    <option value="alert-appropriate">Appropriate Alert</option>
+                                    <option value="protective">Protective (Appropriate)</option>
+                                    <option value="social">Good Social Interaction</option>
+                                    <option value="task-performance">Service Task Performed</option>
+                                </optgroup>
+                                <optgroup label="Needs Attention">
+                                    <option value="distracted">Distracted/Unfocused</option>
+                                    <option value="pulling">Pulling on Leash</option>
+                                    <option value="reactive">Reactive to Stimuli</option>
+                                    <option value="anxious">Anxious/Stressed</option>
+                                    <option value="overexcited">Overexcited</option>
+                                    <option value="noncompliant">Non-Compliant</option>
+                                </optgroup>
+                                <optgroup label="Concerning Behaviors">
+                                    <option value="aggressive">Aggressive Display</option>
+                                    <option value="fearful">Fearful/Cowering</option>
+                                    <option value="destructive">Destructive Behavior</option>
+                                    <option value="excessive-barking">Excessive Barking</option>
+                                    <option value="separation">Separation Anxiety</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Trigger/Context:</label>
+                            <textarea id="behavior-trigger" class="form-textarea" rows="2" placeholder="What triggered this behavior? (e.g., loud noise, stranger approaching, other dog, crowd)"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description:</label>
+                            <textarea id="behavior-description" class="form-textarea" rows="3" placeholder="Describe exactly what happened in detail..." required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Intensity (1-10):</label>
+                                <input type="range" id="behavior-intensity" min="1" max="10" value="5" class="intensity-slider">
+                                <span id="intensity-value" class="intensity-display">5</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Duration:</label>
+                                <select id="behavior-duration" class="form-input">
+                                    <option value="instant">Instant/Brief</option>
+                                    <option value="1-5min">1-5 minutes</option>
+                                    <option value="5-15min">5-15 minutes</option>
+                                    <option value="15-30min">15-30 minutes</option>
+                                    <option value="30min+">30+ minutes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Your Response/Intervention:</label>
+                            <textarea id="behavior-response" class="form-textarea" rows="2" placeholder="What did you do? How did you respond?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Outcome:</label>
+                            <select id="behavior-outcome" class="form-input">
+                                <option value="">Select...</option>
+                                <option value="success">Behavior Corrected Successfully</option>
+                                <option value="partial">Partial Improvement</option>
+                                <option value="no-change">No Change</option>
+                                <option value="escalated">Behavior Escalated</option>
+                                <option value="self-resolved">Self-Resolved</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Notes & Insights:</label>
+                            <textarea id="behavior-notes" class="form-textarea" rows="2" placeholder="Any patterns noticed? What might help in future?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Log Behavior</button>
+                    </form>
+                </div>
+
+                <!-- Behavior History & Analysis -->
+                <div class="behavior-analysis">
+                    <h3>Behavior History & Patterns</h3>
+
+                    <div class="analysis-controls">
+                        <label>Filter by:</label>
+                        <select id="filter-behavior-type" class="filter-select">
+                            <option value="all">All Behaviors</option>
+                            <option value="positive">Positive Only</option>
+                            <option value="concerning">Needs Attention</option>
+                        </select>
+                        <select id="filter-timeframe" class="filter-select">
+                            <option value="7">Last 7 Days</option>
+                            <option value="30">Last 30 Days</option>
+                            <option value="90">Last 90 Days</option>
+                            <option value="all">All Time</option>
+                        </select>
+                        <button id="export-behavior-data" class="btn-secondary">Export Data</button>
+                    </div>
+
+                    <div id="behavior-history" class="behavior-timeline">
+                        <p class="empty-state">No behavior observations logged yet. Start tracking above to identify patterns and measure progress.</p>
+                    </div>
+                </div>
+
+                <!-- Trigger Identification -->
+                <div class="trigger-analysis">
+                    <h3>Identified Triggers & Patterns</h3>
+                    <div id="trigger-list" class="trigger-grid">
+                        <p class="empty-state">As you log behaviors, common triggers will be identified here.</p>
+                    </div>
+                </div>
+
+                <!-- Training Recommendations -->
+                <div class="behavior-recommendations">
+                    <h3>Behavior Training Focus Areas</h3>
+                    <div id="recommendations-list" class="recommendations">
+                        <p class="info-box">Based on your behavior logs, we'll suggest specific training areas to focus on.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Personal Journal Section -->
         <section id="journal" class="content-section journal-section">
             <div class="container">
@@ -610,6 +1171,382 @@ Be honest with yourself. This is for you."></textarea>
                             <div id="album-photos" class="photo-grid"></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Animal Certification Prep Section -->
+        <section id="certification" class="content-section certification-section">
+            <div class="container">
+                <h2 class="section-title">Service Animal Certification Preparation</h2>
+                <p class="section-subtitle">Track progress toward public access certification and legal requirements</p>
+
+                <!-- Certification Progress Dashboard -->
+                <div class="cert-dashboard">
+                    <div class="cert-progress-card">
+                        <h3>Overall Readiness</h3>
+                        <div class="cert-progress-circle">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#e8f1ef" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                                <circle class="progress-ring-circle progress-ring-fill" stroke="#3d7561" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" id="cert-progress-ring"/>
+                            </svg>
+                            <div class="progress-percentage" id="cert-percentage">0%</div>
+                        </div>
+                        <p class="cert-status" id="cert-status">Not Ready for Certification</p>
+                    </div>
+
+                    <div class="cert-requirements-summary">
+                        <div class="requirement-stat">
+                            <h4>Public Access Test</h4>
+                            <p id="pat-score">0/10</p>
+                            <span>Required Areas</span>
+                        </div>
+                        <div class="requirement-stat">
+                            <h4>Task Training</h4>
+                            <p id="task-count">0/3</p>
+                            <span>Min. Tasks Completed</span>
+                        </div>
+                        <div class="requirement-stat">
+                            <h4>Medical Records</h4>
+                            <p id="medical-complete">0/5</p>
+                            <span>Documents Ready</span>
+                        </div>
+                        <div class="requirement-stat">
+                            <h4>Training Hours</h4>
+                            <p id="training-hours">0</p>
+                            <span>Hours Logged</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Public Access Test Checklist -->
+                <div class="public-access-test">
+                    <h3>Public Access Test (PAT) Requirements</h3>
+                    <p class="section-info">Standard test for service animal certification. All items must be passed reliably.</p>
+
+                    <div class="pat-checklist">
+                        <div class="pat-category">
+                            <h4>Controlled Unload & Entry</h4>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-1" data-pat="unload">
+                                <label for="pat-1">
+                                    <strong>Controlled Unload from Vehicle</strong>
+                                    <span>Waits for release, exits calmly on command</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="unload"> / 10
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pat-category">
+                            <h4>Approaching & Entering Building</h4>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-2" data-pat="approach">
+                                <label for="pat-2">
+                                    <strong>Approaching Building</strong>
+                                    <span>Heels properly, ignores distractions, waits at door</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="approach"> / 10
+                                </div>
+                            </div>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-3" data-pat="door">
+                                <label for="pat-3">
+                                    <strong>Controlled Entry Through Door</strong>
+                                    <span>Waits, enters calmly, no crowding or pulling</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="door"> / 10
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pat-category">
+                            <h4>Heel Through Building</h4>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-4" data-pat="heel">
+                                <label for="pat-4">
+                                    <strong>Heeling in Public</strong>
+                                    <span>Loose leash, left side, attention on handler, auto-sits</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="heel"> / 10
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pat-category">
+                            <h4>Six Foot Recall</h4>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-5" data-pat="recall">
+                                <label for="pat-5">
+                                    <strong>Recall from 6 Feet</strong>
+                                    <span>Immediate response to "come" command</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="recall"> / 10
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pat-category">
+                            <h4>Sit & Down on Command</h4>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-6" data-pat="sit-down">
+                                <label for="pat-6">
+                                    <strong>Sit & Down Commands</strong>
+                                    <span>Immediate response, maintain position until released</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="sit-down"> / 10
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pat-category">
+                            <h4>Stay in Sit & Down</h4>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-7" data-pat="stay">
+                                <label for="pat-7">
+                                    <strong>Sit-Stay & Down-Stay</strong>
+                                    <span>3+ minutes, handler out of sight</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="stay"> / 10
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pat-category">
+                            <h4>Come When Called & Ignore Distractions</h4>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-8" data-pat="distraction">
+                                <label for="pat-8">
+                                    <strong>Ignore Distractions</strong>
+                                    <span>No reaction to food, toys, people, other animals</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="distraction"> / 10
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pat-category">
+                            <h4>Down Under Table & Controlled Exit</h4>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-9" data-pat="table">
+                                <label for="pat-9">
+                                    <strong>Down Under Table</strong>
+                                    <span>Settle under table/chair for 30+ minutes, no movement</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="table"> / 10
+                                </div>
+                            </div>
+                            <div class="pat-item">
+                                <input type="checkbox" id="pat-10" data-pat="exit">
+                                <label for="pat-10">
+                                    <strong>Controlled Exit</strong>
+                                    <span>Wait at door, exit calmly on command, load into vehicle</span>
+                                </label>
+                                <div class="pat-trials">
+                                    <span>Trials Passed: </span>
+                                    <input type="number" class="trial-input" min="0" max="10" value="0" data-pat="exit"> / 10
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Required Documentation Checklist -->
+                <div class="documentation-checklist">
+                    <h3>Required Documentation & Records</h3>
+                    <div class="doc-list">
+                        <div class="doc-item">
+                            <input type="checkbox" id="doc-vacc" data-doc="vaccinations">
+                            <label for="doc-vacc">
+                                <strong>Current Vaccination Records</strong>
+                                <span>All core vaccines current, rabies certificate</span>
+                            </label>
+                        </div>
+                        <div class="doc-item">
+                            <input type="checkbox" id="doc-health" data-doc="health">
+                            <label for="doc-health">
+                                <strong>Health Certificate/Vet Letter</strong>
+                                <span>Stating dog is healthy and suitable for service work</span>
+                            </label>
+                        </div>
+                        <div class="doc-item">
+                            <input type="checkbox" id="doc-training" data-doc="training">
+                            <label for="doc-training">
+                                <strong>Training Log</strong>
+                                <span>Documented training hours and progress (min. 120 hours recommended)</span>
+                            </label>
+                        </div>
+                        <div class="doc-item">
+                            <input type="checkbox" id="doc-handler" data-doc="handler">
+                            <label for="doc-handler">
+                                <strong>Handler/Disability Documentation</strong>
+                                <span>VA disability letter or medical documentation of condition</span>
+                            </label>
+                        </div>
+                        <div class="doc-item">
+                            <input type="checkbox" id="doc-tasks" data-doc="tasks">
+                            <label for="doc-tasks">
+                                <strong>Task List & Demonstrations</strong>
+                                <span>Documented service tasks dog performs to mitigate disability</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ADA Service Animal Requirements -->
+                <div class="ada-requirements">
+                    <h3>ADA Service Animal Definition & Rights</h3>
+                    <div class="ada-info">
+                        <div class="ada-card">
+                            <h4>ADA Definition</h4>
+                            <p>Under the ADA, a service animal is defined as a dog that has been individually trained to do work or perform tasks for an individual with a disability.</p>
+                            <ul>
+                                <li>The task(s) must be directly related to the person's disability</li>
+                                <li>Dogs whose sole function is to provide comfort or emotional support do NOT qualify</li>
+                                <li>Service animals in training have varying protections by state</li>
+                            </ul>
+                        </div>
+
+                        <div class="ada-card">
+                            <h4>Public Access Rights</h4>
+                            <p>Service animals are allowed in all areas where the public is normally allowed to go, including:</p>
+                            <ul>
+                                <li>Restaurants, hotels, retail stores</li>
+                                <li>Hospitals, medical facilities</li>
+                                <li>Government buildings</li>
+                                <li>Public transportation</li>
+                                <li>Schools and universities</li>
+                            </ul>
+                        </div>
+
+                        <div class="ada-card">
+                            <h4>Only Two Questions Can Be Asked</h4>
+                            <ol>
+                                <li>Is the dog a service animal required because of a disability?</li>
+                                <li>What work or task has the dog been trained to perform?</li>
+                            </ol>
+                            <p><strong>Cannot be asked:</strong> About your disability, for medical documentation, for certification/ID, or for demonstrations</p>
+                        </div>
+
+                        <div class="ada-card">
+                            <h4>Service Animal Can Be Excluded If:</h4>
+                            <ul>
+                                <li>Dog is out of control and handler does not take effective action</li>
+                                <li>Dog is not housebroken</li>
+                                <li>Dog poses a direct threat to health/safety of others</li>
+                            </ul>
+                            <p>Barking alone is not a reason for exclusion unless excessive and disruptive.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certification Organizations -->
+                <div class="certification-orgs">
+                    <h3>Certification & Registration Options</h3>
+                    <p class="section-info"><strong>Important:</strong> Certification is NOT legally required under ADA. However, some handlers choose to certify for peace of mind or additional legitimacy.</p>
+
+                    <div class="cert-org-list">
+                        <div class="cert-org-card">
+                            <h4>Assistance Dogs International (ADI)</h4>
+                            <p>Gold standard for service dog training programs. ADI accreditation shows highest level of training.</p>
+                            <p><strong>Website:</strong> <a href="https://assistancedogsinternational.org" target="_blank">assistancedogsinternational.org</a></p>
+                        </div>
+
+                        <div class="cert-org-card">
+                            <h4>International Association of Assistance Dog Partners (IAADP)</h4>
+                            <p>Supports owner-trainers. Offers public access test and handler certification.</p>
+                            <p><strong>Website:</strong> <a href="https://www.iaadp.org" target="_blank">iaadp.org</a></p>
+                        </div>
+
+                        <div class="cert-org-card">
+                            <h4>Service Dog Certifications</h4>
+                            <p>Online testing and certification for owner-trained service dogs. Tests public access skills.</p>
+                            <p><strong>Website:</strong> <a href="https://www.servicedogcertifications.org" target="_blank">servicedogcertifications.org</a></p>
+                        </div>
+
+                        <div class="cert-org-card">
+                            <h4>United States Dog Registry</h4>
+                            <p>Voluntary registry. Provides ID cards and documentation (not legally required but can help in public).</p>
+                            <p><strong>Website:</strong> <a href="https://www.usdogregistry.org" target="_blank">usdogregistry.org</a></p>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>⚠️ Beware of Scam "Registries"</strong>
+                        <p>Many websites sell fake "service dog certifications" and vests with no actual training verification. Legitimate certification requires testing, not just payment.</p>
+                    </div>
+                </div>
+
+                <!-- Training Milestones Tracker -->
+                <div class="milestones-tracker">
+                    <h3>Training Milestones Timeline</h3>
+                    <div class="milestone-timeline">
+                        <div class="milestone" data-milestone="foundation">
+                            <div class="milestone-marker"></div>
+                            <div class="milestone-content">
+                                <h4>Month 1-3: Foundation Complete</h4>
+                                <input type="checkbox" id="milestone-1" data-milestone="foundation">
+                                <label for="milestone-1">All basic obedience commands reliable</label>
+                                <input type="date" class="milestone-date" placeholder="Date Achieved">
+                            </div>
+                        </div>
+
+                        <div class="milestone" data-milestone="tasks">
+                            <div class="milestone-marker"></div>
+                            <div class="milestone-content">
+                                <h4>Month 3-6: Service Tasks Trained</h4>
+                                <input type="checkbox" id="milestone-2" data-milestone="tasks">
+                                <label for="milestone-2">Minimum 3 PTSD tasks performing reliably</label>
+                                <input type="date" class="milestone-date" placeholder="Date Achieved">
+                            </div>
+                        </div>
+
+                        <div class="milestone" data-milestone="public">
+                            <div class="milestone-marker"></div>
+                            <div class="milestone-content">
+                                <h4>Month 6-9: Public Access Proficient</h4>
+                                <input type="checkbox" id="milestone-3" data-milestone="public">
+                                <label for="milestone-3">Passing PAT in multiple environments</label>
+                                <input type="date" class="milestone-date" placeholder="Date Achieved">
+                            </div>
+                        </div>
+
+                        <div class="milestone" data-milestone="certification">
+                            <div class="milestone-marker"></div>
+                            <div class="milestone-content">
+                                <h4>Month 9-12: Certification Ready</h4>
+                                <input type="checkbox" id="milestone-4" data-milestone="certification">
+                                <label for="milestone-4">Consistent performance, documentation complete</label>
+                                <input type="date" class="milestone-date" placeholder="Date Achieved">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Export Certification Package -->
+                <div class="cert-export">
+                    <h3>Export Certification Package</h3>
+                    <p>Generate a comprehensive document package for certification or vet visits.</p>
+                    <button id="export-cert-package" class="btn-primary">Generate Certification Package (PDF)</button>
+                    <p class="help-text">Includes: training log, PAT results, task list, documentation checklist</p>
                 </div>
             </div>
         </section>
@@ -1421,5 +2358,6 @@ Be honest with yourself. This is for you."></textarea>
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="js/app-enhancements.js"></script>
 </body>
 </html>

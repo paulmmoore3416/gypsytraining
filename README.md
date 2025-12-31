@@ -1,8 +1,48 @@
-# Gypsy's Training Journey
+<div align="center">
 
-## Service Animal Development Program for Blue Nose Pitbull
+# 🐕 Gypsy's Training Journey
 
-A comprehensive, professional-grade web application designed to document and support the training journey of Gypsy, a 20-month-old blue nose American Pitbull Terrier being trained as a service animal for PTSD support and protective services.
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-success?style=for-the-badge&logo=github)](https://paulmmoore3416.github.io/gypsytraining/)
+[![License](https://img.shields.io/badge/License-Private-red?style=for-the-badge)](LICENSE)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+### 🇺🇸 Service Animal Development Program for Blue Nose Pitbull
+
+*A comprehensive, professional-grade web application designed to document and support the training journey of Gypsy, a 20-month-old blue nose American Pitbull Terrier being trained as a service animal for PTSD support and protective services.*
+
+[![Veteran Owned](https://img.shields.io/badge/🎖️_Veteran-Owned-blue?style=flat-square)](README.md)
+[![USMC](https://img.shields.io/badge/USMC-Semper_Fi-darkred?style=flat-square)](README.md)
+[![Service Dog](https://img.shields.io/badge/🐾_Service-Dog_Training-green?style=flat-square)](README.md)
+[![PTSD Support](https://img.shields.io/badge/💚_PTSD-Support-teal?style=flat-square)](README.md)
+
+---
+
+### Project Stats
+
+![Training Phases](https://img.shields.io/badge/Training_Phases-4-blue?style=flat-square&logo=target&logoColor=white)
+![Commands](https://img.shields.io/badge/Commands-30+-green?style=flat-square&logo=command&logoColor=white)
+![Features](https://img.shields.io/badge/Features-8_Modules-orange?style=flat-square&logo=cube&logoColor=white)
+![Dog Age](https://img.shields.io/badge/Dog_Age-20_Months-purple?style=flat-square&logo=paw&logoColor=white)
+![Breed](https://img.shields.io/badge/Breed-Blue_Nose_APBT-red?style=flat-square&logo=dog&logoColor=white)
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [Project Purpose](#-project-purpose)
+- [Handler Profile](#-handler-profile)
+- [Features](#-features)
+- [Technical Architecture](#️-technical-architecture)
+- [Design Theme](#-design-theme)
+- [Usage Instructions](#-usage-instructions)
+- [Privacy & Security](#-privacy--security)
+- [GitHub Pages Deployment](#-github-pages-deployment)
+- [Crisis Resources](#-crisis-resources)
+- [Version History](#-version-history)
 
 ---
 
@@ -98,9 +138,16 @@ Optimal feeding for a working service animal:
 - Weekly nutrition tracking log
 
 ### 7. **Veteran Resources Directory**
+
+![VA Resources](https://img.shields.io/badge/🇺🇸_VA-Resources-blue?style=flat-square)
+![Service Programs](https://img.shields.io/badge/🐕‍🦺_Service-Programs-green?style=flat-square)
+![Mental Health](https://img.shields.io/badge/🧠_Mental-Health-teal?style=flat-square)
+![Free Equipment](https://img.shields.io/badge/🎁_Free-Equipment-orange?style=flat-square)
+
 Comprehensive resource list including:
 
 **Service Animal Programs:**
+
 - Paws for Purple Hearts
 - K9s For Warriors
 - Patriot PAWS Service Dogs
@@ -143,6 +190,13 @@ Eight veterinary clinics within 10 miles:
 ## 🛠️ Technical Architecture
 
 ### Technology Stack
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![LocalStorage](https://img.shields.io/badge/Storage-LocalStorage-orange?style=flat-square&logo=databricks&logoColor=white)
+![Google Fonts](https://img.shields.io/badge/Fonts-Google_Fonts-4285F4?style=flat-square&logo=google&logoColor=white)
+
 - **Frontend:** Pure HTML5, CSS3, Vanilla JavaScript (no frameworks)
 - **Storage:** Browser LocalStorage for persistent data
 - **Styling:** Custom CSS with Pacific Northwest mountain theme
@@ -248,7 +302,12 @@ All data is stored in browser LocalStorage with keys:
 
 ## 🚀 GitHub Pages Deployment
 
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![Deployment](https://img.shields.io/badge/Deploy-Automated-brightgreen?style=flat-square&logo=githubactions&logoColor=white)
+
 ### Prerequisites
+
 - GitHub account: `paulmmoore3416`
 - Personal Access Token (PAT) provided
 - Git installed on local machine
@@ -319,6 +378,10 @@ See [`docs/COMMANDS.md`](docs/COMMANDS.md) for printer-friendly command referenc
 
 ## 🏥 Crisis Resources
 
+![Veterans Crisis Line](https://img.shields.io/badge/Crisis_Line-988_Press_1-critical?style=for-the-badge&logo=phone&logoColor=white)
+![Crisis Text](https://img.shields.io/badge/Text-838255-blue?style=for-the-badge&logo=message&logoColor=white)
+![Online Chat](https://img.shields.io/badge/Chat-VeteransCrisisLine.net-green?style=for-the-badge&logo=chat&logoColor=white)
+
 **Veterans Crisis Line:** 988, then press 1
 **Crisis Text:** Text 838255
 **Online Chat:** VeteransCrisisLine.net
@@ -357,7 +420,12 @@ Created with dedication for Gypsy's training journey and personal healing.
 
 ## 🔄 Version History
 
+![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat-square&logo=semanticrelease&logoColor=white)
+![Release Date](https://img.shields.io/badge/Released-December_2024-green?style=flat-square&logo=calendar&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active_Development-yellow?style=flat-square&logo=clockify&logoColor=white)
+
 **Version 1.0.0** - December 2024
+
 - Initial release
 - Complete training suite with 4 phases
 - Robust journal system

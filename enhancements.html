@@ -1,0 +1,212 @@
+<!--
+    PREMIUM ENHANCEMENTS UI SECTIONS
+    Add these sections to your index.html where appropriate
+-->
+
+<!-- ENHANCEMENT 1: CERTIFICATE GENERATION SECTION -->
+<section id="certification" class="content-section">
+    <div class="container">
+        <h2 class="section-title">🏆 Service Animal Certification</h2>
+        <p class="section-description">Generate official training completion certificates with professional formatting</p>
+
+        <div class="certificate-generator">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="cert-handler-name">Handler Name</label>
+                    <input type="text" id="cert-handler-name" placeholder="Enter handler name" />
+                </div>
+
+                <div class="form-group">
+                    <label for="cert-dog-name">Dog Name</label>
+                    <input type="text" id="cert-dog-name" placeholder="Enter dog name" />
+                </div>
+
+                <div class="form-group">
+                    <label for="cert-dog-breed">Dog Breed</label>
+                    <input type="text" id="cert-dog-breed" placeholder="Enter breed" />
+                </div>
+
+                <div class="form-group">
+                    <label for="cert-type">Certification Type</label>
+                    <select id="cert-type">
+                        <option>PTSD Service Animal Training</option>
+                        <option>Service Animal - Basic Obedience</option>
+                        <option>Service Animal - Advanced Tasks</option>
+                        <option>Service Animal - Public Access</option>
+                        <option>Service Animal - Complete Program</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cert-issue-date">Training Start Date</label>
+                    <input type="date" id="cert-issue-date" />
+                </div>
+
+                <div class="form-group">
+                    <label for="cert-completion-date">Completion Date</label>
+                    <input type="date" id="cert-completion-date" />
+                </div>
+
+                <div class="form-group">
+                    <label for="cert-training-hours">Total Training Hours</label>
+                    <input type="number" id="cert-training-hours" placeholder="500" />
+                </div>
+
+                <div class="form-group">
+                    <label for="cert-instructor">Instructor/Coordinator</label>
+                    <input type="text" id="cert-instructor" placeholder="Enter instructor name" />
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-primary" onclick="CertificateSystem.generateCertificate()">
+                    📜 Generate Certificate
+                </button>
+                <button class="btn-secondary" id="download-cert-btn" style="display: none;" onclick="window.print()">
+                    💾 Download/Print Certificate
+                </button>
+            </div>
+
+            <div id="certificate-output" class="certificate-preview" style="display: none; margin-top: 40px;">
+                <!-- Certificate will be generated here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ENHANCEMENT 2: VIDEO TRAINING LIBRARY -->
+<section id="video-library" class="content-section">
+    <div class="container">
+        <h2 class="section-title">🎥 Training Video Library</h2>
+        <p class="section-description">Upload and organize training session videos for review and progress tracking</p>
+
+        <div class="upload-section">
+            <input type="file" id="video-upload" accept="video/*" style="display: none;" />
+            <button class="btn-primary" onclick="document.getElementById('video-upload').click()">
+                📹 Upload Training Video
+            </button>
+        </div>
+
+        <div id="video-gallery" class="video-grid">
+            <!-- Videos will be displayed here -->
+        </div>
+    </div>
+</section>
+
+<!-- ENHANCEMENT 3: PROGRESS ANALYTICS -->
+<section id="analytics" class="content-section">
+    <div class="container">
+        <h2 class="section-title">📊 Progress Analytics & Charts</h2>
+        <p class="section-description">Visual insights into training progress, session frequency, and skill development</p>
+
+        <div class="analytics-controls">
+            <button class="btn-primary" onclick="ProgressAnalytics.generateCharts()">
+                🔄 Refresh Analytics
+            </button>
+            <button class="btn-secondary" onclick="PrintableReports.generateTrainingLog()">
+                🖨️ Print Training Log
+            </button>
+        </div>
+
+        <div id="analytics-charts">
+            <!-- Charts will be rendered here -->
+        </div>
+    </div>
+</section>
+
+<!-- ENHANCEMENT 5: TRAINING CALENDAR & REMINDERS -->
+<section id="calendar" class="content-section">
+    <div class="container">
+        <h2 class="section-title">📅 Training Calendar & Reminders</h2>
+        <p class="section-description">Schedule training sessions and get notified before upcoming events</p>
+
+        <div class="calendar-form">
+            <h3>Add Training Reminder</h3>
+            <div class="form-row">
+                <input type="text" id="reminder-title" placeholder="Training session title" />
+                <input type="date" id="reminder-date" />
+                <input type="time" id="reminder-time" />
+                <button class="btn-primary" onclick="TrainingCalendar.addReminder(
+                    document.getElementById('reminder-title').value,
+                    document.getElementById('reminder-date').value,
+                    document.getElementById('reminder-time').value
+                )">➕ Add Reminder</button>
+            </div>
+        </div>
+
+        <div id="training-calendar">
+            <!-- Calendar will be rendered here -->
+        </div>
+    </div>
+</section>
+
+<!-- ENHANCEMENT 7: BEHAVIOR TRACKING HEATMAP -->
+<section id="behavior" class="content-section">
+    <div class="container">
+        <h2 class="section-title">🗺️ Behavior Tracking Heatmap</h2>
+        <p class="section-description">Track behavior patterns over time with visual heatmap analysis</p>
+
+        <div class="behavior-form">
+            <h3>Log Behavior Event</h3>
+            <div class="form-row">
+                <select id="behavior-type">
+                    <option>Anxiety</option>
+                    <option>Hypervigilance</option>
+                    <option>Calm/Grounded</option>
+                    <option>Alert Response</option>
+                    <option>Nightmare Interruption</option>
+                    <option>Deep Pressure Therapy</option>
+                    <option>Other</option>
+                </select>
+                <input type="range" id="behavior-intensity" min="1" max="10" value="5" />
+                <span id="intensity-value">5</span>
+                <input type="text" id="behavior-notes" placeholder="Notes..." />
+                <button class="btn-primary" onclick="BehaviorHeatmap.trackBehavior(
+                    document.getElementById('behavior-type').value,
+                    parseInt(document.getElementById('behavior-intensity').value),
+                    document.getElementById('behavior-notes').value
+                )">📝 Log Behavior</button>
+            </div>
+        </div>
+
+        <div id="behavior-heatmap" class="heatmap-container">
+            <!-- Heatmap will be rendered here -->
+        </div>
+    </div>
+</section>
+
+<!-- QUICK EXPORT BUTTONS (Add to existing sections) -->
+<div class="export-toolbar" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <button class="btn-floating" onclick="PDFExport.exportJournalToPDF()" title="Export Journal to PDF">
+        📄 PDF
+    </button>
+    <button class="btn-floating" onclick="PrintableReports.generateTrainingLog()" title="Print Training Log">
+        🖨️ Print
+    </button>
+</div>
+
+<!-- Add this script tag before closing </body> -->
+<script src="js/enhancements.js"></script>
+
+<!-- Event Listeners for Video Upload -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const videoUpload = document.getElementById('video-upload');
+    if (videoUpload) {
+        videoUpload.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                VideoLibrary.uploadVideo(e.target.files[0]);
+            }
+        });
+    }
+
+    // Intensity slider real-time update
+    const intensitySlider = document.getElementById('behavior-intensity');
+    const intensityValue = document.getElementById('intensity-value');
+    if (intensitySlider && intensityValue) {
+        intensitySlider.addEventListener('input', (e) => {
+            intensityValue.textContent = e.target.value;
+        });
+    }
+});
+</script>

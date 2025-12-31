@@ -159,6 +159,41 @@ async function initDatabase() {
           )
         `);
 
+        // Certificates table
+        database.run(`
+          CREATE TABLE IF NOT EXISTS certificates (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            certificate_number INTEGER UNIQUE NOT NULL,
+            user_id INTEGER NOT NULL,
+            handler_name TEXT NOT NULL,
+            dog_name TEXT NOT NULL,
+            dog_breed TEXT,
+            certification_type TEXT NOT NULL,
+            issue_date DATE NOT NULL,
+            completion_date DATE,
+            training_hours INTEGER,
+            skills_mastered TEXT,
+            instructor_name TEXT,
+            notes TEXT,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users (id)
+          )
+        `);
+
+        // Certificate counter table (starts at 3416)
+        database.run(`
+          CREATE TABLE IF NOT EXISTS certificate_counter (
+            id INTEGER PRIMARY KEY CHECK (id = 1),
+            current_number INTEGER NOT NULL DEFAULT 3416
+          )
+        `);
+
+        // Initialize certificate counter
+        database.run(`
+          INSERT OR IGNORE INTO certificate_counter (id, current_number) VALUES (1, 3416)
+        `);
+
         // Create indexes for better performance
         database.run('CREATE INDEX IF NOT EXISTS idx_training_sessions_user ON training_sessions(user_id)');
         database.run('CREATE INDEX IF NOT EXISTS idx_training_sessions_date ON training_sessions(date)');

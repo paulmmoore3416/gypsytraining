@@ -22,6 +22,7 @@ const journalRoutes = require('./routes/journal');
 const photoRoutes = require('./routes/photos');
 const nutritionRoutes = require('./routes/nutrition');
 const syncRoutes = require('./routes/sync');
+const certificateRoutes = require('./routes/certificates');
 
 // Import database initialization
 const { initDatabase } = require('./database/init');
@@ -91,6 +92,7 @@ app.use('/api/journal', journalRoutes);
 app.use('/api/photos', photoRoutes);
 app.use('/api/nutrition', nutritionRoutes);
 app.use('/api/sync', syncRoutes);
+app.use('/api/certificates', certificateRoutes);
 
 // API documentation endpoint
 app.get('/api', (req, res) => {
